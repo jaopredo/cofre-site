@@ -1,0 +1,66 @@
+.cofre {
+  border-radius: 10px;
+  color: white;
+  background-color: #707070;
+  width: 45%;
+  height: 60%;
+  padding: 10px;
+  /* GRID CONFIGS */
+  display: grid;
+  grid-template-rows: 35% 33% 28%;
+  grid-template-columns: 75% 25%;
+  gap: 10px 2px;
+  grid-template-areas: "visor visor" "aviso enter" "aviso enter";
+}
+
+#visor {
+  border-radius: 10px;
+  text-align: center;
+  font-size: 30pt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: visor;
+}
+#visor input {
+  border-radius: 10px;
+  background: #0d00ff;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+}
+
+#enter {
+  border-radius: 10px;
+  font-size: 20pt;
+  background-color: #3f3f3f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: enter;
+}
+#enter:hover {
+  background-color: #5a5a5a;
+}
+#enter:active {
+  background-color: #262626;
+}
+
+.container {
+  display: flex;
+  grid-area: aviso;
+}
+.container .paper {
+  background-color: #c6939a;
+  font-size: 9pt;
+  word-break: break-word;
+  text-align: center;
+  height: 80px;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=cofre.css.map */
