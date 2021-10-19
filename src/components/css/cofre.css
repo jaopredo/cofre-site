@@ -1,11 +1,22 @@
-.cofre {
+.cofre, .contorno {
   border-radius: 10px;
   color: white;
   background-color: #707070;
-  width: 45%;
-  height: 60%;
+  width: 60%;
+  height: 80%;
   padding: 10px;
-  /* GRID CONFIGS */
+  /* DISPLAY */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contorno {
+  width: 90%;
+  height: 90%;
+  border: 1.5px black solid;
+  box-shadow: inset 0px 0px 10px black;
+  /* GRID DISPLAYS */
   display: grid;
   grid-template-rows: 35% 33% 28%;
   grid-template-columns: 75% 25%;
@@ -17,50 +28,40 @@
   border-radius: 10px;
   text-align: center;
   font-size: 30pt;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   grid-area: visor;
 }
-#visor input {
-  border-radius: 10px;
-  background: #0d00ff;
-  width: 100%;
-  height: 100%;
+
+button {
+  cursor: pointer;
   color: white;
-  text-align: center;
 }
 
-#enter {
-  border-radius: 10px;
-  font-size: 20pt;
-  background-color: #3f3f3f;
+#teclado {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  grid-area: enter;
-}
-#enter:hover {
-  background-color: #5a5a5a;
-}
-#enter:active {
-  background-color: #262626;
-}
-
-.container {
-  display: flex;
   grid-area: aviso;
 }
-.container .paper {
-  background-color: #c6939a;
-  font-size: 9pt;
-  word-break: break-word;
+
+.key {
+  font-size: 40pt;
   text-align: center;
-  height: 80px;
+  width: 30%;
+  height: 90px;
   padding: 3px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #545454;
+  box-shadow: 0px 0px 4px black;
+}
+.key:hover {
+  background-color: #5a5a5a;
+}
+.key:active {
+  background-color: #3a3a3a;
 }
 
 /*# sourceMappingURL=cofre.css.map */

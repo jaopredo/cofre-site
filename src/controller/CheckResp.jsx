@@ -1,5 +1,4 @@
 
-
 export default function handleClickSendButton(e, state, visorRef){
    const input = visorRef.current
    if(state === process.env.REACT_APP_RESP) {
