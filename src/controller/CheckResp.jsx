@@ -20,13 +20,16 @@ export default function handleClickSendButton(inputValue, setInputValue, inputRe
       setInputValue('');
    } else {
       input.style.backgroundColor = 'rgb(131, 247, 108)';  // Cor de fundo se acertar
+      setTimeout(() => {
+         input.style.backgroundColor = 'rgb(13, 0, 255)';
+         cofre.style.opacity = '0%';
+      }, 3000);
+      setTimeout(()=>{
+         cofre.style.zIndex = '-1';
+      }, 5000)
    }
 
    setTimeout(() => {
       input.style.backgroundColor = 'rgb(13, 0, 255)';
-      cofre.style.opacity = '0%';
    }, 3000);
-   setTimeout(()=>{
-      cofre.style.zIndex = '-1';
-   }, 5000)
 }
