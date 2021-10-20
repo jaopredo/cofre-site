@@ -1,12 +1,33 @@
 
-export default function handleClickSendButton(e, state, visorRef){
-   const input = visorRef.current
-   if(state === process.env.REACT_APP_RESP) {
-      input.style.backgroundColor = 'rgb(131, 247, 108)'
+export default function handleClickSendButton(inputValue, setInputValue, inputRef, cofreRef){
+   /**
+    * Função que lida com o clique do botão de ENTER
+    * 
+    * @param {Object} e Objeto do botão que eu cliquei
+    * @param {String} inputValue String do useRef
+    * @param {Function} setInputValue Alterar o valor do Ref passado
+    * @param {Object} inputRef Referência do input
+    */
+   // rgb(131, 247, 108)
+   // rgb(228, 116, 116)
+   // rgb(13, 0, 255)
+
+   const input = inputRef.current; // Declaro meu input
+   let acerto = false;
+
+   if (inputValue !== process.env.REACT_APP_RESP) {  // Se o que eu digitei for diferente da resposta
+      input.style.backgroundColor = 'rgb(228, 116, 116)';  // Cor de fundo se eu errar
+      setInputValue('');
    } else {
-      input.style.backgroundColor = 'rgb(228, 116, 116)'
+      input.style.backgroundColor = 'rgb(131, 247, 108)';  // Cor de fundo se acertar
+      acerto = true;
    }
-   setTimeout(()=>{
+
+   setTimeout(() => {
       input.style.backgroundColor = 'rgb(13, 0, 255)'
-   }, 2000)
+      if (acerto) {  // Seto a animação
+         cofreRef.current.style.animationName = 'cofre'
+         cofreRef.current.style.animationDuration = '5s'
+      }
+   }, 3000)
 }

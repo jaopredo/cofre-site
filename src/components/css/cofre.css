@@ -1,14 +1,44 @@
+#interno {
+  border-radius: 10px;
+  background-color: #212121;
+  box-shadow: inset 0px 0px 300px rgba(0, 0, 0, 0.658);
+  width: 60%;
+  height: 80%;
+  opacity: 100%;
+  display: flex;
+  align-items: flex-end;
+  align-content: space-between;
+}
+
 .cofre, .contorno {
   border-radius: 10px;
   color: white;
+  position: absolute;
   background-color: #707070;
   width: 60%;
   height: 80%;
   padding: 10px;
+  z-index: 2;
   /* DISPLAY */
   display: flex;
   justify-content: center;
   align-items: center;
+  /* ANIMATION */
+  animation-fill-mode: forwards;
+}
+
+.totem {
+  filter: drop-shadow(0px 0px 7px #ffd900);
+  z-index: 1;
+  width: 50%;
+  height: auto;
+  transition: filter 2s;
+}
+.totem:hover {
+  filter: drop-shadow(0px 0px 20px #ffd900);
+}
+.totem:active {
+  filter: drop-shadow(0px 0px 30px #ffd900);
 }
 
 .contorno {
@@ -62,6 +92,15 @@ button {
 }
 .key:active {
   background-color: #3a3a3a;
+}
+
+@keyframes cofre {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
 }
 
 /*# sourceMappingURL=cofre.css.map */

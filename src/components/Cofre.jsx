@@ -3,9 +3,12 @@ import React, { useRef, useState } from 'react';
 /* CSS */
 import './css/cofre.css';
 
+/* IMAGES */
+import Shiva from '../images/Shiva.png'
+import Buda from '../images/Buda.png'
+
 /* CONTROLERS */
 import handleClickSendButton from '../controller/CheckResp';
-import handleChangeInputState from '../controller/ChangeState';
 
 /* COMPONENTS */
 import Visor from './Visor';
@@ -14,19 +17,29 @@ import Teclado from './Teclado';
 
 
 
-function Cofre({...rest }) {
-   const visorRef = useRef(null);
+function Cofre({animate, setAnimate, ...rest }) {
+   const inputRef = useRef(null);
+   const cofreRef = useRef(null);
    const [inputValue, setInputValue] = useState('');
 
    return (
-      <div className='cofre' {...rest}>
-         <div className='contorno'>
-            <div id='visor'>
-               <Visor type='text' maxLength={9} ref={visorRef} onChange={e => handleChangeInputState(e, setInputValue)}/>
+      <div id='interno'>
+         <div id='cofre' className='cofre' ref={cofreRef} {...rest} onAnimationEnd={e=>e.target.style.zIndex = '-1'}>
+            <div className='contorno'>
+               <div id='visor'>
+                  <Visor ref={inputRef} type='text' maxLength={4} value={inputValue} readOnly/>
+               </div>
+               <Teclado inputValue={inputValue} setInputValue={setInputValue}/>
+               <Enter onClick={() => handleClickSendButton(
+                  inputValue,
+                  setInputValue,
+                  inputRef,
+                  cofreRef,
+               )}>ENTER</Enter>
             </div>
-            <Teclado/>
-            <Enter onClick={e => handleClickSendButton(e, inputValue, visorRef)}>ENTER</Enter>
          </div>
+         <img className='totem' src={Shiva} alt='Shiva' />
+         <img className='totem' src={Buda} alt='Buda' />
       </div>
    )
 }
