@@ -23,7 +23,10 @@ export default function handleClickSendButton(inputValue, setInputValue, inputRe
    }
 
    setTimeout(() => {
-      input.style.backgroundColor = 'rgb(13, 0, 255)'
-      cofre.className += ' animate'
-   }, 3000)
+      input.style.backgroundColor = 'rgb(13, 0, 255)';
+      cofre.style.opacity = '0%';
+   }, 3000);
+   setTimeout(()=>{
+      cofre.style.zIndex = '-1';
+   }, 5000)
 }

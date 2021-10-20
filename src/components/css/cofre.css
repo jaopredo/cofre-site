@@ -9,13 +9,6 @@
   align-content: space-between;
 }
 
-.animate {
-  /* ANIMATION */
-  animation-name: cofre;
-  animation-duration: 5s;
-  animation-fill-mode: forwards;
-}
-
 .cofre, .contorno {
   border-radius: 10px;
   color: white;
@@ -25,6 +18,7 @@
   height: 80%;
   padding: 10px;
   z-index: 2;
+  transition: opacity 5s;
   /* DISPLAY */
   display: flex;
   justify-content: center;
@@ -96,15 +90,6 @@ button {
 }
 .key:active {
   background-color: #3a3a3a;
-}
-
-@keyframes cofre {
-  from {
-    opacity: 100%;
-  }
-  to {
-    opacity: 0%;
-  }
 }
 
 /*# sourceMappingURL=cofre.css.map */
