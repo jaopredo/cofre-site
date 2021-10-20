@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import './App.css';
 
@@ -10,15 +9,9 @@ function App() {
    const [animate, setAnimate] = useState(false)
 
    return (
-      <Router>
-         <div className="App">
-            <Route
-               path='/'
-               exact
-               render={()=><Cofre animate={animate} setAnimate={setAnimate}/>}
-            />
-         </div>
-      </Router>
+      <div className="App">
+         <Cofre animate={animate} setAnimate={setAnimate}/>
+      </div>
    );
 }
 

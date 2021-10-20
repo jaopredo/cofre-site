@@ -29,8 +29,6 @@ yarn-error.log*
 /sass
 
 # Css maps
-src/App.css.map
-src/index.css.map
 
 # Enviroment
 .env
