@@ -13,21 +13,17 @@ export default function handleClickSendButton(inputValue, setInputValue, inputRe
    // rgb(13, 0, 255)
 
    const input = inputRef.current; // Declaro meu input
-   let acerto = false;
+   const cofre = cofreRef.current;
 
    if (inputValue !== process.env.REACT_APP_RESP) {  // Se o que eu digitei for diferente da resposta
       input.style.backgroundColor = 'rgb(228, 116, 116)';  // Cor de fundo se eu errar
       setInputValue('');
    } else {
       input.style.backgroundColor = 'rgb(131, 247, 108)';  // Cor de fundo se acertar
-      acerto = true;
    }
 
    setTimeout(() => {
       input.style.backgroundColor = 'rgb(13, 0, 255)'
-      if (acerto) {  // Seto a animação
-         cofreRef.current.style.animationName = 'cofre'
-         cofreRef.current.style.animationDuration = '5s'
-      }
+      cofre.className += ' animate'
    }, 3000)
 }

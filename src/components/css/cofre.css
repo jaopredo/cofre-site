@@ -9,6 +9,13 @@
   align-content: space-between;
 }
 
+.animate {
+  /* ANIMATION */
+  animation-name: cofre;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
 .cofre, .contorno {
   border-radius: 10px;
   color: white;
@@ -22,8 +29,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* ANIMATION */
-  animation-fill-mode: forwards;
 }
 
 .totem {
